@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "exercises/01_basics",
+    "exercises/02_ownership",
+    "exercises/03_types_and_errors",
+    "projects/01_guessing_game",
+    "projects/02_todo_cli",
+]
+
