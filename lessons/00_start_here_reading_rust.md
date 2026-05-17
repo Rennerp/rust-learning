@@ -361,17 +361,29 @@ You do not need to understand how macros are built yet. Just recognize the `!`.
 ## Important Symbols
 
 - `:` means "has type" in variables and function parameters.
+  Example: `let score: i32 = 10;` and `fn double(value: i32) -> i32 { value * 2 }`
 - `->` means "returns".
+  Example: `fn name() -> &'static str { "Rust" }`
 - `::` accesses something inside a type or module.
+  Example: `String::from("hello")`
 - `.` calls a method or accesses a field.
+  Example: `message.push_str(" world")` or `point.x`
 - `&` borrows a value.
+  Example: `fn print_name(name: &str) { println!("{name}"); }`
 - `&mut` mutably borrows a value.
+  Example: `fn add_exclamation(text: &mut String) { text.push('!'); }`
 - `!` marks a macro call or the never type in advanced code.
+  Example: `println!("hello");`
 - `?` returns early if a `Result` is an error.
+  Example: `let text = std::fs::read_to_string("notes.txt")?;`
 - `_` means "ignore this" or "catch everything".
+  Example: `let (name, _) = ("Rust", 2015);`
 - `=>` connects a pattern to a result in `match`.
+  Example: `match score { 0 => "zero", _ => "non-zero" }`
 - `..` and `..=` create ranges.
+  Example: `1..4` means 1 through 3, and `1..=4` means 1 through 4.
 - `<T>` means a generic type parameter.
+  Example: `fn first<T>(items: &[T]) -> &T { &items[0] }`
 
 ## How To Read Compiler Errors
 
