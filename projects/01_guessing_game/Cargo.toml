@@ -7,3 +7,6 @@ edition = "2021"
 name = "guessing_game"
 path = "src/main.rs"
 
+[dependencies]
+rand = "0.10.1"
+
