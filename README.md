@@ -19,56 +19,56 @@ rustc --version
 cargo --version
 ```
 
-This repo also includes [rust-toolchain.toml](/Users/rennerpoveda/workspace/learning/rust-learning/rust-toolchain.toml:1), so Cargo will use the stable Rust toolchain with `rustfmt` and `clippy`.
+This repo also includes [rust-toolchain.toml](./rust-toolchain.toml), so Cargo will use the stable Rust toolchain with `rustfmt` and `clippy`.
 
 ## 2. Learn The Layout
 
-The repo is a Cargo workspace. The top-level [Cargo.toml](/Users/rennerpoveda/workspace/learning/rust-learning/Cargo.toml:1) lists all exercises and projects as workspace members.
+The repo is a Cargo workspace. The top-level [Cargo.toml](./Cargo.toml) lists all exercises and projects as workspace members.
 
 Important folders:
 
-- [lessons/](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/00_start_here_reading_rust.md:1) contains beginner-friendly explanations.
-- [exercises/](/Users/rennerpoveda/workspace/learning/rust-learning/exercises/README.md:1) contains test-driven practice crates.
-- [projects/](/Users/rennerpoveda/workspace/learning/rust-learning/projects/README.md:1) contains small runnable programs.
+- [lessons/](./lessons/) contains beginner-friendly explanations.
+- [exercises/](./exercises/) contains test-driven practice crates.
+- [projects/](./projects/) contains small runnable programs.
 
 ## 3. Follow The Learning Path
 
 Work in this order:
 
-1. [lessons/00_start_here_reading_rust.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/00_start_here_reading_rust.md:1)
+1. [lessons/00_start_here_reading_rust.md](./lessons/00_start_here_reading_rust.md)
    Learn how to read Rust syntax: `fn`, `let`, `mut`, types, blocks, loops, `match`, references, generics, macros, and common symbols.
 
-2. [lessons/00_setup_and_cargo.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/00_setup_and_cargo.md:1)
+2. [lessons/00_setup_and_cargo.md](./lessons/00_setup_and_cargo.md)
    Learn the Rust toolchain, Cargo, crates, packages, formatting, and tests.
 
-3. [lessons/01_language_foundations.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/01_language_foundations.md:1)
+3. [lessons/01_language_foundations.md](./lessons/01_language_foundations.md)
    Learn variables, mutability, types, functions, expressions, control flow, collections, and basic pattern matching.
 
-4. [exercises/01_basics](/Users/rennerpoveda/workspace/learning/rust-learning/exercises/01_basics/README.md:1)
+4. [exercises/01_basics](./exercises/01_basics/README.md)
    Practice numbers, strings, loops, vectors, conditionals, and simple functions.
 
-5. [lessons/02_ownership_borrowing.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/02_ownership_borrowing.md:1)
+5. [lessons/02_ownership_borrowing.md](./lessons/02_ownership_borrowing.md)
    Learn ownership, moves, copies, borrowing, mutable references, slices, and practical lifetimes.
 
-6. [exercises/02_ownership](/Users/rennerpoveda/workspace/learning/rust-learning/exercises/02_ownership/README.md:1)
+6. [exercises/02_ownership](./exercises/02_ownership/README.md)
    Practice borrowing data instead of moving or cloning unnecessarily.
 
-7. [lessons/03_types_errors_traits.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/03_types_errors_traits.md:1)
+7. [lessons/03_types_errors_traits.md](./lessons/03_types_errors_traits.md)
    Learn structs, enums, methods, `Option`, `Result`, traits, generics, derives, and visibility.
 
-8. [exercises/03_types_and_errors](/Users/rennerpoveda/workspace/learning/rust-learning/exercises/03_types_and_errors/README.md:1)
+8. [exercises/03_types_and_errors](./exercises/03_types_and_errors/README.md)
    Practice modeling data and handling invalid or missing values.
 
-9. [lessons/04_rust_language_map.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/04_rust_language_map.md:1)
+9. [lessons/04_rust_language_map.md](./lessons/04_rust_language_map.md)
    Use this as a checklist for the rest of the language.
 
-10. [lessons/05_glossary.md](/Users/rennerpoveda/workspace/learning/rust-learning/lessons/05_glossary.md:1)
+10. [lessons/05_glossary.md](./lessons/05_glossary.md)
    Use this whenever a Rust word is unfamiliar.
 
-11. [projects/01_guessing_game](/Users/rennerpoveda/workspace/learning/rust-learning/projects/01_guessing_game/src/main.rs:1)
+11. [projects/01_guessing_game](./projects/01_guessing_game/)
    Read, run, and extend a small command-line guessing game.
 
-12. [projects/02_todo_cli](/Users/rennerpoveda/workspace/learning/rust-learning/projects/02_todo_cli/src/main.rs:1)
+12. [projects/02_todo_cli](./projects/02_todo_cli/)
    Read, run, and extend a small command-line todo manager.
 
 ## 4. Work On Exercises
@@ -122,7 +122,7 @@ cargo run -p project_02_todo_cli -- list
 cargo run -p project_02_todo_cli -- done 1
 ```
 
-Use [projects/README.md](/Users/rennerpoveda/workspace/learning/rust-learning/projects/README.md:1) to understand the important lines and choose extension ideas.
+Use [projects/README.md](./projects/README.md) to understand the important lines and choose extension ideas.
 
 ## 6. Use Cargo Tools
 

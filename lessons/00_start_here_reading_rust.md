@@ -396,4 +396,3 @@ When Rust reports an error:
 5. Fix one error and run the command again.
 
 Do not try to fix every error at once. Later errors are often caused by the first one.
-
