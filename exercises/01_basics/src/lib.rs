@@ -2,27 +2,69 @@
 
 pub fn fahrenheit_to_celsius(fahrenheit: f64) -> f64 {
     // Formula: (F - 32) * 5 / 9.
-    todo!("convert Fahrenheit to Celsius")
+    (fahrenheit - 32.0) * 5.0/9.0
 }
 
 pub fn factorial(number: u64) -> u64 {
     // Return 1 for 0, then multiply the range from 1 through number.
-    todo!("return the factorial of number")
+
+    let mut factorial: u64 = 1;
+
+    for factor in 1..=number {
+        factorial *= factor
+    }
+
+    return factorial
 }
 
 pub fn fizzbuzz(number: u32) -> String {
     // Check divisibility by 15 before checking 3 or 5.
-    todo!("return Fizz, Buzz, FizzBuzz, or the number as text")
+
+    let result = if number % 15 == 0 {
+        "FizzBuzz".to_string()
+    } else if number % 3 == 0 {
+        "Fizz".to_string()
+    } else if number % 5 == 0 {
+        "Buzz".to_string()
+    } else {
+        number.to_string()
+    };
+
+    result
 }
 
 pub fn count_vowels(text: &str) -> usize {
     // Iterate over chars so the code reads text characters, not bytes.
-    todo!("count a, e, i, o, u in lowercase and uppercase text")
+    let mut counter: usize = 0;
+    for letter in text.chars() {
+        match letter {
+            'a' => counter += 1,
+            'e' => counter += 1,
+            'i' => counter += 1,
+            'o' => counter += 1,
+            'u' => counter += 1,
+            'A' => counter += 1,
+            'E' => counter += 1,
+            'I' => counter += 1,
+            'O' => counter += 1,
+            'U' => counter += 1,
+            _ => {}
+        }
+    }
+
+    counter
 }
 
 pub fn sum_even_numbers(numbers: &[i32]) -> i32 {
     // Read from the borrowed slice; do not take ownership of it.
-    todo!("sum only even numbers")
+    let mut sum: i32 = 0;
+    for &number in numbers.iter() {
+        if number % 2 == 0 {
+            sum += number
+        }
+    }
+
+    sum
 }
 
 #[cfg(test)]
