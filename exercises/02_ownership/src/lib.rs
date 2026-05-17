@@ -2,27 +2,57 @@
 
 pub fn first_word(text: &str) -> &str {
     // Return a slice borrowed from text, or "" when there is no word.
-    todo!("return the first whitespace-separated word")
+    let size: usize = text.len();
+    for (i, c) in text.char_indices() {
+        if c.is_whitespace() {
+            return &text[0..i];
+        }
+    }
+
+    &text[0..size]
 }
 
 pub fn normalize_name(name: &mut String) {
-    // Build the normalized value, then assign it back into the borrowed String.
-    todo!("trim the name and lowercase it in place")
+    // Change the existing String instead of returning a new one.
+    // Remove leading and trailing whitespace, lowercase the text,
+    // then write the normalized result back through the mutable borrow.
+    // Example: "  Renner Poveda  " becomes "renner poveda".
+
+    /*
+        Explanation: trim() does not modify the original String;
+        it only returns a borrowed view without leading or trailing whitespace.
+        To update the actual value, create the normalized text with to_lowercase() and
+        assign that new String back through the mutable reference.
+     */
+    *name = name.trim().to_lowercase();
 }
 
 pub fn join_words(words: &[String]) -> String {
-    // Borrow the slice and create a new joined String.
-    todo!("join borrowed words with a single space")
+    // Read from the borrowed slice without taking ownership of any String.
+    // Build and return one new String with a single space between each word.
+    // Example: ["ownership", "borrowing", "lifetimes"] becomes
+    // "ownership borrowing lifetimes".
+    words.join(" ")
 }
 
 pub fn longest<'a>(left: &'a str, right: &'a str) -> &'a str {
-    // The returned reference must be one of the input references.
-    todo!("return the longer string slice; return left when tied")
+    // Return one of the borrowed inputs instead of creating new text.
+    // Compare the lengths and return the longer slice.
+    // If both have the same length, return left.
+    //todo!("return the longer borrowed string slice, using left as the tie-breaker")
+
+    if left.len() >= right.len() {
+        left
+    } else {
+        right
+    }
 }
 
 pub fn remove_empty(values: &mut Vec<String>) {
-    // Mutate the existing vector instead of returning a new one.
-    todo!("remove empty or whitespace-only strings from the vector")
+    // Mutate the existing vector through the mutable borrow.
+    // Keep only entries that contain non-whitespace text.
+    // Remove both "" and strings like "  ".
+    values.retain(|value| !value.trim().is_empty() ) ;
 }
 
 #[cfg(test)]

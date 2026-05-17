@@ -23,28 +23,51 @@ pub enum UserError {
 impl User {
     pub fn new(id: u64, email: String, role: Role) -> Result<Self, UserError> {
         // Validate first; construct User only when the input is valid.
-        todo!("validate email and return Ok(User) or Err(UserError)")
+        if email.is_empty() {
+            return Err(UserError::EmptyEmail);
+        }
+
+        if !email.contains("@") {
+            return Err(UserError::MissingAtSign);
+        }
+
+        Ok(User { id, email, role })
     }
 
     pub fn can_delete_users(&self) -> bool {
         // A method with &self reads the user without taking ownership.
-        todo!("only admins can delete users")
+        match self.role {
+            Role::Admin => true,
+            _ => false
+        }
     }
 }
 
 pub fn parse_role(input: &str) -> Option<Role> {
     // Return None when the input does not map to a known role.
-    todo!("parse admin, member, or guest case-insensitively")
+    if input.eq_ignore_ascii_case("admin") {
+        Some(Role::Admin)
+    } else if input.eq_ignore_ascii_case("member") {
+        Some(Role::Member)
+    } else if input.eq_ignore_ascii_case("guest") {
+        Some(Role::Guest)
+    } else {
+        None
+    }
 }
 
 pub fn find_user(users: &[User], id: u64) -> Option<&User> {
     // Return a borrowed user from the input slice.
-    todo!("find a user by id")
+    // todo!("find a user by id")
+    users.iter().find(|user| user.id == id)
 }
 
 pub fn admin_emails(users: &[User]) -> Vec<String> {
     // Return owned emails, so cloning selected String values is expected.
-    todo!("return emails for admin users")
+   users.iter()
+        .filter(|user| user.role == Role::Admin)
+        .map(|user| user.email.clone())
+        .collect()
 }
 
 #[cfg(test)]
